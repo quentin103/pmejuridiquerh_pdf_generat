@@ -17,7 +17,7 @@ COPY . /app
 RUN pnpm install
 
 # Variable d'environnement pour le port
-ENV PORT=3200
+ENV PORT=3000
 ENV NODE_ENV='production'
 
 # Exposition du port sur lequel l'application Nest.js écoute (par défaut : 3200)
