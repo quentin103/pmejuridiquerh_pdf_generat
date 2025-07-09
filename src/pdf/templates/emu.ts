@@ -1,0 +1,1 @@
+export const EnumTemplate = ['user', 'order', 'invoice', 'report', 'attestation-conges', 'attestation-conges-maternite', 'attestation-reprise-service', 'attestation-stage-ecole', 'attestation-travail', 'attestation-stage-qualification']
