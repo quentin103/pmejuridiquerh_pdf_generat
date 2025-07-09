@@ -44,9 +44,6 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
         timeout: 60000, // 60 secondes timeout
       });
 
-
-    
-
       this.logger.log('✅ Puppeteer browser initialized successfully');
 
       // Enregistrer les helpers Handlebars
