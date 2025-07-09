@@ -23,8 +23,8 @@ ENV NODE_ENV='production'
 # Exposition du port sur lequel l'application Nest.js écoute (par défaut : 3200)
 EXPOSE 3200
 
-# Exécution de la commande "prisma generate" pour générer les fichiers Prisma
-RUN npx prisma generate
+# # Exécution de la commande "prisma generate" pour générer les fichiers Prisma
+# RUN npx prisma generate
 
 #RUN npx prisma db seed
 
