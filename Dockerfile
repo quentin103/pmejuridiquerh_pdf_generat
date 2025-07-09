@@ -24,7 +24,7 @@ ENV NODE_ENV='production'
 EXPOSE 3200
 
 # # Exécution de la commande "prisma generate" pour générer les fichiers Prisma
-# RUN npx prisma generate
+RUN npx puppeteer browsers install chrome
 
 #RUN npx prisma db seed
 
