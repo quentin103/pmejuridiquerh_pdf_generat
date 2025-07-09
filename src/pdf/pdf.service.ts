@@ -17,6 +17,21 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
       this.browser = await puppeteer.launch({
         headless: "new", // Utiliser le nouveau mode headless
         args: [
+           '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage',
+          '--disable-accelerated-2d-canvas',
+          '--no-first-run',
+          '--no-zygote',
+          '--single-process',
+          '--disable-gpu',
+          '--disable-background-timer-throttling',
+          '--disable-backgrounding-occluded-windows',
+          '--disable-renderer-backgrounding',
+          '--disable-features=TranslateUI',
+          '--disable-ipc-flooding-protection',
+          '--memory-pressure-off',
+          '--max_old_space_size=4096',
           '--no-sandbox',
           '--disable-setuid-sandbox',
           '--disable-dev-shm-usage',
@@ -28,6 +43,9 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
         ],
         timeout: 60000, // 60 secondes timeout
       });
+
+
+    
 
       this.logger.log('✅ Puppeteer browser initialized successfully');
 
