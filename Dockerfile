@@ -16,7 +16,8 @@ COPY . /app
 
 # Installation des dépendances avec pnpm
 RUN pnpm install --frozen-lockfile
-
+RUN apt-get update && apt-get install -y chromium
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
 # Variable d'environnement pour le port
 ENV PORT=3200
 ENV NODE_ENV='production'

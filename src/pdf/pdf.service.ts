@@ -17,7 +17,7 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
       this.browser = await puppeteer.launch({
         headless: "new", // Utiliser le nouveau mode headless
         args: [
-           '--no-sandbox',
+          '--no-sandbox',
           '--disable-setuid-sandbox',
           '--disable-dev-shm-usage',
           '--disable-accelerated-2d-canvas',
@@ -57,13 +57,13 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
 
     } catch (error) {
       this.logger.error('❌ Failed to initialize PDF Service:', error.message);
-      
+
       // Afficher des instructions d'aide
       this.logger.error('🔧 To fix this issue, run:');
       this.logger.error('   npm run install-chrome');
       this.logger.error('   or');
       this.logger.error('   npx puppeteer browsers install chrome');
-      
+
       throw error;
     }
   }
@@ -101,7 +101,7 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
     options: PdfOptions = {}
   ): Promise<Buffer> {
     const startTime = Date.now();
-    
+
     try {
       // Vérifier si le navigateur est disponible
       if (!this.browser) {
@@ -131,7 +131,7 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
         // Optimiser la page pour la génération PDF
         await page.setDefaultNavigationTimeout(30000);
         await page.setDefaultTimeout(30000);
-        
+
         // Définir la taille de la viewport
         await page.setViewport({
           width: 1200,
@@ -171,7 +171,7 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
 
         const duration = Date.now() - startTime;
         this.logger.log(`✅ PDF generated successfully for template '${templateName}' in ${duration}ms`);
-        
+
         return pdfBuffer;
 
       } finally {
@@ -300,7 +300,7 @@ export class PdfService implements OnModuleInit, OnModuleDestroy {
   }> {
     try {
       const isBrowserConnected = this.browser && this.browser.isConnected();
-      
+
       return {
         status: isBrowserConnected ? 'healthy' : 'unhealthy',
         browser: isBrowserConnected,
