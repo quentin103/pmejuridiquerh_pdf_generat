@@ -1,5 +1,6 @@
-# Utilisation de l'image Node.js 14 en tant qu'image de base
-FROM node:18.16.0
+FROM ghcr.io/puppeteer/puppeteer:latest
+# ou
+FROM node:18.16.0-slim
 
 # Installation de pnpm de manière globale
 RUN npm install -g pnpm
